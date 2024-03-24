@@ -19,6 +19,7 @@ namespace AdvPractice2
             Console.WriteLine("{0} {1}: {2}", xaxb.GetLuckyNumber(), "123", result2);
             Console.WriteLine("{0} gameover: {1}", "125", xaxb.IsGameover("125"));
             Console.WriteLine("{0} gameover: {1}", "123", xaxb.IsGameover("123"));
+            Console.WriteLine("hello world");
         }
         
 
