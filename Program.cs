@@ -6,6 +6,10 @@ namespace AdvPractice2
         static void Main(string[] args)
         {
             XAXBKernel xaxb = new XAXBKernel();
+
+            //string luckyNum = xaxb.GetLuckyNumber();
+            //Console.WriteLine("生成的三個隨機數字為：" + luckyNum);
+
             xaxb.SetLuckyNumber("123");
             Console.WriteLine("{0} is legal? {1}", "1234", XAXBKernel.IsLegal("1234"));
             Console.WriteLine("{0} is legal? {1}", "123", XAXBKernel.IsLegal("123"));
@@ -32,7 +36,17 @@ namespace AdvPractice2
         //隨機產生三個數字
         public XAXBKernel()
         {
-            
+            Random random = new Random();
+            while (true)
+            {
+                string randNum = random.Next(10).ToString() + random.Next(10).ToString() + random.Next(10).ToString();
+                if (IsLegal(randNum))
+                {
+                    luckyNum = randNum;
+                    break;
+                }
+                    
+            }      
         }
 
         public bool SetLuckyNumber(String newLuckyNum)
